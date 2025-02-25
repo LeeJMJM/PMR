@@ -34,14 +34,14 @@ def args_ini():
     parser.add_argument('--length_dataset', type=str, default=120,
                         help='s, max = 60*10=600')
     parser.add_argument('--data_dir', type=str,
-                        default=r'C:\Users\jashm\OneDrive\桌面\PMR\dataset',
+                        default=r'PLEASE_EDIT\PMR\dataset',
                         help='the directory of the data')
     parser.add_argument('--normlizetype', type=str,
                         choices=['0-1', '1-1', 'mean-std'],
                         default='mean-std',
                         help='data normalization methods')
     parser.add_argument('--checkpoint_dir', type=str,
-                        default=r'C:\Users\jashm\OneDrive\桌面\PMR\checkpoint',
+                        default=r'PLEASE_EDIT\PMR\checkpoint',
                         help='the directory to save the model')
     parser.add_argument('--batch_size', type=int, default=128,
                         help='batchsize of the training process')
@@ -145,7 +145,7 @@ def run_a_model(i_rep, num_iter, args, save_dir, datasets):
 if __name__ == '__main__':
     args = args_ini()
     num_iter = 1
-    rep = 5  # number of repetation of models
+    rep = 20  # number of repetation of models
     for i_CAM in ['woCAM', 'wCAM']:  # ['woCAM', 'wCAM']
         if i_CAM == 'wCAM':
             args.CAM_loss_added = True
@@ -153,8 +153,7 @@ if __name__ == '__main__':
             args.CAM_loss_added = False
         # ['DCNN', 'ResNet', 'Inception', 'AlexNet',
         # 'DRSN', WKN_Laplace']
-        for i_model in ['DCNN', 'ResNet', 'Inception', 'AlexNet',
-                        'DRSN', 'WKN_Laplace']:
+        for i_model in ['DCNN']:
             args.model_name = i_model
             for i_dataset in ['EccGear', 'XJTU_Spurgear']:
                 # ['EccGear', 'XJTU_Spurgear']

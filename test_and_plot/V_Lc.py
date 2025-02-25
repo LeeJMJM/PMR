@@ -29,7 +29,7 @@ def get_inputs_labels(args, noise):
         phase:
         torch.utils.data.DataLoader(
             datasets[phase],
-            batch_size=1650,  # 1650 is the sample numbers of test set
+            batch_size=585,  # 585 is the sample numbers of test set
             shuffle=(True if phase == 'train' else False),
             )
             for phase in ['train', 'test']
@@ -47,7 +47,7 @@ def get_inputs_labels(args, noise):
                     )
 
     label_index = {}  # obtain the corresponding index for every label
-    classesnum = 11
+    classesnum = 5
     for i_label in range(classesnum):
         label_index[i_label] = [
             index for index,
@@ -56,12 +56,12 @@ def get_inputs_labels(args, noise):
     return inputs, labels, label_index
 
 
-classesnum = 11
+classesnum = 5
 args = train_models.args_ini()
-args.dataset_name = 'EccGear'
+args.dataset_name = 'XJTU_Spurgear'
 matplotlib.use('TkAgg')
 save_data_path = r'D:\202403_CAMandCNN\1_writing_papers' \
-    r'\1_manuscript\plot_codes\inputs_data.pkl'
+    r'\1_manuscript\plot_codes\inputs_data_XJTUSpurgear.pkl'
 
 # 1. load dataset
 for i_noise in [False, True]:
@@ -92,18 +92,18 @@ for i_noise in [False, True]:
                         'DRSN', 'WKN_Laplace']:
             args.model_name = i_model
             if args.model_name == 'DCNN':
-                args.alpha_cam = 10
-            elif args.model_name == 'ResNet':
-                args.alpha_cam = 0.2
-            elif args.model_name == 'Inception':
-                args.alpha_cam = 5
-            elif args.model_name == 'DRSN':
                 args.alpha_cam = 1
+            elif args.model_name == 'ResNet':
+                args.alpha_cam = 50
+            elif args.model_name == 'Inception':
+                args.alpha_cam = 100
+            elif args.model_name == 'DRSN':
+                args.alpha_cam = 10
             elif args.model_name == 'WKN_Laplace':
-                args.alpha_cam = 0.2
+                args.alpha_cam = 5
             model_dir = r'PLEASE_EDIT\PMR' + \
                 r'\checkpoint\alpha' + str(args.alpha_cam) + '_120_' + \
-                args.model_name + '_EccGear' + '_' + w_wo_CAM
+                args.model_name + '_XJTU_Spurgear' + '_' + w_wo_CAM
             curves = np.empty((0, 16))
             for i in range(20):
                 model_path = model_dir + r'\rep' + str(i) + r'\model.pth'
@@ -129,11 +129,18 @@ for i_noise in [False, True]:
                 curves_one_model = np.array(cam_results.cpu().detach())
                 curves = np.vstack((curves, curves_one_model))
 
+            # import test_plot_single_Lc  # Lc od one sample
+            # test_plot_single_Lc.plot_single_Lc(
+            #     inputs_data,
+            #     label_index,
+            #     curves_one_model
+            #     )
+
             mean = np.mean(curves, axis=0)
             std = np.std(curves, axis=0)
             q1 = np.percentile(curves, 25, axis=0)
             q3 = np.percentile(curves, 75, axis=0)
-            freq = [i * 3200/(16-1) for i in range(16)]
+            freq = [i * 2500/(16-1) for i in range(16)]
 
             # 4. plotting
             font = {
@@ -169,7 +176,7 @@ for i_noise in [False, True]:
             hline_value = (1 - beta) * (
                 np.max(mean) - np.min(mean)
                 ) + np.min(mean)
-            # find the points
+            # find point
             idx = np.where(np.diff(np.sign(mean - hline_value)))[0]
             x_crossings = []
             for i in range(len(idx)):
@@ -207,6 +214,16 @@ for i_noise in [False, True]:
                             linewidth=6,
                             alpha=0.5
                             )
+            if len(x_crossings) == 1:
+                xmin_v = 0.0
+                xmax_v = x_crossings[0][0]/(xlim_max-xlim_min)
+                plt.axhline(y=0.0 * (ylim_max-ylim_min),
+                            xmin=xmin_v, xmax=xmax_v,
+                            color='r',
+                            linewidth=6,
+                            alpha=0.5
+                            )
+
             # axis annotation
             ax.set_xlabel(
                 'Frequency (Hz)', color='k', fontdict=font, labelpad=0
@@ -215,6 +232,7 @@ for i_noise in [False, True]:
             for label in ax.get_xticklabels():
                 label.set_fontname('Times New Roman')
             # ax.set_ylim(-0.0, 1.05)
+            ax.set_xticks(np.array([0, 800, 1600, 2400]))
             ax.set_yticks(np.array([0, 1]))
             ax.set_ylabel(
                 'Normalized amplitude (-)',
@@ -223,9 +241,9 @@ for i_noise in [False, True]:
             for label in ax.get_yticklabels():
                 label.set_fontname('Times New Roman')
 
-            section = 'IV_D' if i_noise else 'IV_C'
-            fig_save_path = r'D:\202403_CAMandCNN\1_writing_papers' \
-                            + r'\1_manuscript\plot_codes\GearEcc_fig' \
+            section = 'V_noised' if i_noise else 'V_unnoised'
+            fig_save_path = r'D:\202403_CAMandCNN\1_writing_papers\1_manuscript' \
+                            + r'\plot_codes\XJTUSpurgear_fig' \
                             + '\\' + section + '_Lc_' \
                             + args.model_name + '_' \
                             + w_wo_CAM + '.pdf'

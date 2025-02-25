@@ -3,8 +3,6 @@
 
 from models.Resnet import resnet18 as ResNet
 
-from models.Alexnet import alexnet as AlexNet
-
 from models.DCNN import DCNN
 
 from models.Inception import Inception

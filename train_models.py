@@ -151,7 +151,7 @@ if __name__ == '__main__':
             args.CAM_loss_added = True
         else:
             args.CAM_loss_added = False
-        # ['DCNN', 'ResNet', 'Inception', 'AlexNet',
+        # ['DCNN', 'ResNet', 'Inception',
         # 'DRSN', WKN_Laplace']
         for i_model in ['DCNN']:
             args.model_name = i_model
@@ -165,8 +165,6 @@ if __name__ == '__main__':
                         alpha_cam_list = [0.2]  # EccGear:0.2
                     elif args.model_name == 'Inception':
                         alpha_cam_list = [5]  # EccGear:5
-                    elif args.model_name == 'AlexNet':
-                        alpha_cam_list = [30]  # EccGear:30
                     elif args.model_name == 'DRSN':
                         alpha_cam_list = [1]  # EccGear: 1
                     elif args.model_name == 'WKN_Laplace':
@@ -179,8 +177,6 @@ if __name__ == '__main__':
                         alpha_cam_list = [50]  # XJTU_Spurgear:50
                     elif args.model_name == 'Inception':
                         alpha_cam_list = [100]  # XJTU_Spurgear:100
-                    elif args.model_name == 'AlexNet':
-                        alpha_cam_list = [10]  # JTU_Spurgear:10
                     elif args.model_name == 'DRSN':
                         alpha_cam_list = [10]  # XJTU_Spurgear: 10
                     elif args.model_name == 'WKN_Laplace':

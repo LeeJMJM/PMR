@@ -40,7 +40,7 @@ Here, how to use the code to replicate the paper is introduced.
 ### 3.1 Before running the code
 **Dataset:** We used two datasets, UM-GearEccDatase and the XJTUSpurgear dataset. You can download the data used in this paper at [Data used in this paper from UM-GearEccDatase](https://drive.google.com/file/d/1zNxpOZuNije8oOqHQX7HxxiOn9NmmRTB/view?usp=sharing) and [Data used in this paper from the XJTUSpurgear dataset](https://drive.google.com/file/d/10-3or-IHJWOh2au0cNP6Yngv1itVu6Fm/view?usp=sharing). Or, you can also download the data from the corresponding cited references. Than, you should put the downloaded data in the _dataset_ folder. In addition, you should cite the corresponding references in your paper to be published.
 
-**Initialization:** We ran the codes in _train_models.py_ to train models. Bascially, all the hyperperemeters or settings were controlled there, either in the function _args\_ini()_ or in the loops from the _if \_\_name\_\_ == '\_\_main\_\_'_ idiom.
+**Initialization:** We ran the codes in _train_models.py_ to train models. Bascially, all the hyperparameters or settings were controlled there, either in the function _args\_ini()_ or in the loops from the _if \_\_name\_\_ == '\_\_main\_\_'_ idiom.
 
 ### 3.2 Train models and get CAM results in every epoch
 **Train models:** As forementioned, training begins in _train_models.py_, but most of works are done in _trainer.train_and_test()_, where the parameters optimization iterates. _trainer.train_and_test()_ is defined from _train_utils.py_ in the folder _utils_.

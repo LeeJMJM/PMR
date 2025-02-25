@@ -3,7 +3,7 @@ import torch
 
 def choose_layer(model_name, model):
     # choose the target layer for CAM
-    if model_name == 'DCNN':
+   if (model_name == 'DCNN' or model_name == 'TFN_Chirplet'):
         target_layer = model.layer4[3]
     elif (model_name == 'ResNet'
           or model_name == 'WKN_Laplace'

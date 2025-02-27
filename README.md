@@ -62,7 +62,7 @@ We've tried the two environments below and both work. The newer one runs faster.
 
 ## 4.	Acknowledgement
 Apart from the refferences cited in the paper, we would like to express our sincere appreciation to the following persons for their public documents or instruction.
-1. 同济子豪兄 for his toturial courses of CAM applications. [Toturial courses of CAM](https://www.bilibili.com/video/BV1Ke411g7gm/?spm_id_from=333.337.search-card.all.click&vd_source=8acef43c041b678cb057f182421c1565)
+1. Brother Zihao from Tongji Univ. for his toturial courses of CAM applications. [Toturial courses of CAM](https://www.bilibili.com/video/BV1Ke411g7gm/?spm_id_from=333.337.search-card.all.click&vd_source=8acef43c041b678cb057f182421c1565)
 2. Xin Zhang and Chao He for their public codes of 1D-version of CAM for fault diagnosis. [Codes of 1D-CAM in GitHub](https://github.com/liguge/1D-Grad-CAM-for-interpretable-intelligent-fault-diagnosis)
 3. An anonymous coder who shares the code of the DRSN based on others article and codes. [Codes of DRSN](https://blog.csdn.net/weixin_47174159/article/details/115409058)
 

@@ -10,7 +10,7 @@ It can:
 
 To apply this method and use the code, please cite:
 
-J. Li, X.-B. Wang, H. Chen, and Z.-X. Yang, “Physical-Knowledge-Guided and Interpretable Deep Neural Networks for Gear Fault Severity Level Diagnosis,” _IEEE Transactions on Industrial Informatics_, to be published.
+J. Li, X.-B. Wang, H. Chen, and Z.-X. Yang, “Physical-Knowledge-Guided and Interpretable Deep Neural Networks for Gear Fault Severity Level Diagnosis,” _IEEE Transactions on Industrial Informatics_, to be published, doi: 10.1109/TII.2025.3547004.
 
 ## 2.	Method and paper introduction
 Here, a brief introduction of the proposed method and the published is described, as shown in the workflow below.

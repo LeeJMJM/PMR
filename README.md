@@ -16,7 +16,8 @@ Available at: [https://doi.org/10.1109/tii.2025.3547004](https://doi.org/10.1109
 
 ## 2.	Method and paper introduction
 Here, a brief introduction of the proposed method and the published is described, as shown in the workflow below.
-![Method and paper introduction](https://github.com/user-attachments/assets/e9d467de-ba67-40b8-b8b4-3aee8ab90b93)
+![Method and paper introduction](https://github.com/user-attachments/assets/0a9db2d0-ea79-4e9c-9d4b-11812821f272)
+
 
 This method tries to diagnose the FSL of localized faults. The idea is that, considering the situation for the diagnosis of FSL that all samples actually come from the same fault type, the diagnostic model is supposed to care more about the same areas of the input spectra, if the rotating speed remains constant. So, we proposed a PMR term to regulate the training process. The PMR term, which represents how much the diagnostic models concentrate, is calculated from the average of the CAM results of the training samples.
 

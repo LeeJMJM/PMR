@@ -10,7 +10,7 @@ It can:
 
 To apply this method and use the code, please cite:
 
-J. Li, X.-B. Wang, H. Chen, and Z.-X. Yang, “Physical-Knowledge-Guided and Interpretable Deep Neural Networks for Gear Fault Severity Level Diagnosis,” _IEEE Transactions on Industrial Informatics_, Early Access, doi: 10.1109/TII.2025.3547004.
+J. Li, X.-B. Wang, H. Chen, and Z.-X. Yang, “Physical-Knowledge-Guided and Interpretable Deep Neural Networks for Gear Fault Severity Level Diagnosis,” _IEEE Transactions on Industrial Informatics_, vol. 21, no. 6, pp. 4892– 4903, 2025.
 
 Available at: [https://doi.org/10.1109/tii.2025.3547004](https://doi.org/10.1109/tii.2025.3547004).
 

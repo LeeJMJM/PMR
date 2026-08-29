@@ -72,13 +72,6 @@ Apart from the refferences cited in the paper, we would like to express our sinc
 3. An anonymous coder who shares the code of the DRSN based on others article and codes. [Codes of DRSN](https://blog.csdn.net/weixin_47174159/article/details/115409058)
 
 
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=LeeJMJM/PMR&type=date&legend=top-left)](https://www.star-history.com/#LeeJMJM/PMR&type=date&legend=top-left)
-
-
-## Star History
-
 <a href="https://www.star-history.com/?type=date&legend=top-left&repos=LeeJMJM%2FPMR">
  <picture>
    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=LeeJMJM/PMR&type=date&theme=dark&legend=top-left&sealed_token=i1UYWusktUo31tjxD2W2vdDGog1e5CxfTQ3am_oWglovpVC_ypB35-i_4lifDiRxp5QPGGtfXiJIBcCcEiPGrFeKUzeLoadLK1nWa5BmiYJi8GGsDCdP8sI99TMBIJpP5DSVnIsKpOhqegAdixRhXCQILUg94SGyB9yf4ju0ZFq0RrU9DNARkXIf7G-9" />
